@@ -14,28 +14,30 @@ body {
 
 /* --- 1. HEADER & NAVBAR STYLES --- */
 .site-header {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, rgba(255,245,214,0.95), rgba(218, 161, 27, 0.95));
     display: flex;
-    justify-content: space-between; /* Pushes logo to left, navbar links to the right */
+    justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    position: sticky; /* Keeps navbar visible at the top while scrolling */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Keeps navbar above all standard page layers */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 2px solid rgba(140, 45, 25, 0.2);
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #8c2d19; /* Rich madder red accent color */
+    color: #8c2d19;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.4);
 }
 
 .navbar a {
     text-decoration: none;
-    color: #555;
+    color: #5a3510;
     margin-left: 20px;
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
@@ -57,25 +59,107 @@ body {
 
 /* --- 2. HERO SECTION STYLES --- */
 .hero-section {
-    /* Using a fallback color with a texturized background placeholder layout */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x800?text=Indian+Painting+Origin+Banner') no-repeat center center/cover;
-    height: 70vh; /* Takes up 70% of the visible browser height */
+    background: linear-gradient(rgba(36, 24, 10, 0.45), rgba(36, 24, 10, 0.45)), url('images/header-painting.svg') no-repeat center center/cover;
+    min-height: 70vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    text-align: left;
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 5%;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0), rgba(255,255,255,0.12));
+    pointer-events: none;
+}
+
+.hero-left-panel {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-content {
+    max-width: 620px;
+    position: relative;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 15px;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.25);
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
 }
+
+.circular-images {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 420px;
+    height: 420px;
+    z-index: 0;
+    flex-shrink: 0;
+}
+
+.circular-images .circle-photo,
+.circular-images .center-photo-circle {
+    pointer-events: none;
+}
+
+.circular-images .circle-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.85);
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--orbit))) rotate(calc(-1 * var(--angle)));
+    user-select: none;
+}
+
+.circular-images .center-photo-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.95);
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    z-index: 2;
+    user-select: none;
+}
+
+.circular-images .circle-photo:nth-child(2) { --angle: 0deg; --orbit: 158px; }
+.circular-images .circle-photo:nth-child(3) { --angle: 72deg; --orbit: 158px; }
+.circular-images .circle-photo:nth-child(4) { --angle: 144deg; --orbit: 158px; }
+.circular-images .circle-photo:nth-child(5) { --angle: 216deg; --orbit: 158px; }
+.circular-images .circle-photo:nth-child(6) { --angle: 288deg; --orbit: 158px; }
+
+
 
 .btn-primary {
     display: inline-block;
@@ -278,4 +362,180 @@ body {
 
 .footer-links a:hover {
     color: #fff;
+}
+
+/* --- 9. ARTWORKS PAGE STYLES --- */
+.artworks-hero {
+    background: linear-gradient(135deg, #7c2d12, #b45309);
+    color: #fff;
+    padding: 80px 5%;
+}
+
+.artworks-hero__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.artworks-hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.artworks-section {
+    padding: 40px 5% 80px;
+    display: grid;
+    gap: 24px;
+}
+
+.artwork-card {
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.artwork-card--kalamkari { background: #fdf2d8; }
+.artwork-card--madhubani { background: #fde68a; }
+.artwork-card--warli { background: #fef3c7; }
+.artwork-card--tanjore { background: #fce7f3; }
+.artwork-card--gond { background: #dcfce7; }
+.artwork-card--pattachitra { background: #e0f2fe; }
+.artwork-card--phad { background: #f5e0c3; }
+.artwork-card--pithora { background: #f3e8ff; }
+
+.artwork-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.artwork-card h2 {
+    color: #6b2c0f;
+    margin-top: 4px;
+}
+
+.artwork-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7c2d12;
+}
+
+.artwork-badge {
+    background: rgba(255,255,255,0.7);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4a2c0f;
+}
+
+.artwork-history {
+    margin-bottom: 16px;
+    color: #5b3a22;
+}
+
+.artwork-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.art-image-card {
+    background: rgba(255,255,255,0.7);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.art-image-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.art-image-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    color: #4a2c0f;
+}
+
+.art-image-meta button {
+    border: none;
+    background: #8c2d19;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.contact-section {
+    background: #f7efe3;
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+.contact-card,
+.contact-details {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #e5caa4;
+    border-radius: 10px;
+    font: inherit;
+}
+
+.contact-form button {
+    border: none;
+    background: #8c2d19;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact-details h3 {
+    margin-bottom: 10px;
+    color: #7c2d12;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

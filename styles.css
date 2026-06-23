@@ -1,0 +1,281 @@
+/* --- GLOBAL RESETS & TYPOGRAPHY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Layout calculation model that includes borders/padding inside widths */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #faf7f2; /* Soft ivory/cream tint to complement traditional art themes */
+}
+
+/* --- 1. HEADER & NAVBAR STYLES --- */
+.site-header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, navbar links to the right */
+    align-items: center;
+    padding: 20px 5%;
+    position: sticky; /* Keeps navbar visible at the top while scrolling */
+    top: 0;
+    z-index: 1000; /* Keeps navbar above all standard page layers */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8c2d19; /* Rich madder red accent color */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #8c2d19;
+}
+
+.navbar .nav-cta {
+    background-color: #8c2d19;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.navbar .nav-cta:hover {
+    background-color: #611e0f;
+    color: #fff;
+}
+
+/* --- 2. HERO SECTION STYLES --- */
+.hero-section {
+    /* Using a fallback color with a texturized background placeholder layout */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x800?text=Indian+Painting+Origin+Banner') no-repeat center center/cover;
+    height: 70vh; /* Takes up 70% of the visible browser height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #d97d24; /* Warm marigold yellow-orange button */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #b56214;
+}
+
+/* --- 3. TRUST SECTION STYLES --- */
+.trust-section {
+    background-color: #2c3e50; /* Contrasting deep slate background for metrics visibility */
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.metric-card h3 {
+    font-size: 2.5rem;
+    color: #d97d24;
+}
+
+/* --- 4. PRODUCTS SECTION STYLES --- */
+.products-section {
+    padding: 60px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #8c2d19;
+}
+
+.product-grid {
+    display: grid;
+    /* Automatically creates columns based on available space with a minimum card width of 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between rows and columns */
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners match card border radius */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Gentle interactive lifting movement on hover */
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Keeps image proportions regular across varying image layouts */
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    height: 60px; /* Aligns text flow across uniform height restrictions */
+    overflow: hidden;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #8c2d19;
+    background: transparent;
+    color: #8c2d19;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #8c2d19;
+    color: #fff;
+}
+
+/* --- 5. FEATURES STYLES --- */
+.features-section {
+    background-color: #eae3d2;
+    padding: 60px 5%;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Wraps items cleanly on smaller screens */
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.feature-item h4 {
+    color: #8c2d19;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* --- 6. ABOUT SECTION STYLES --- */
+.about-section {
+    padding: 80px 15%;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- 7. CTA SECTION STYLES --- */
+.cta-section {
+    background-color: #8c2d19;
+    color: #fff;
+    text-align: center;
+    padding: 60px 5%;
+}
+
+.cta-section h2 {
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+}
+
+.cta-form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cta-form input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 4px 0 0 4px; /* Matches rounded edges cleanly with the flat button side */
+}
+
+.btn-submit {
+    padding: 12px 24px;
+    background-color: #d97d24;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #b56214;
+}
+
+/* --- 8. FOOTER STYLES --- */
+.site-footer {
+    background-color: #1a1a1a;
+    color: #888;
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}

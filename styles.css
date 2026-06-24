@@ -676,3 +676,162 @@ body {
         gap: 20px;
     }
 }
+
+/* ==========================================================================
+   14. PRODUCT LANDING PAGES (SPLIT LAYOUT WITH E-COMMERCE CARDS)
+   ========================================================================== */
+.art-detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.art-intro-block {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    margin-bottom: 40px;
+    border-left: 5px solid #8c2d19;
+}
+
+.art-intro-block h1 {
+    color: #8c2d19;
+    margin-bottom: 12px;
+}
+
+.gallery-listing {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Two-Panel Split Layout Mechanics */
+.gallery-item-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Image-focus heavy left distribution */
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(229, 202, 164, 0.4);
+}
+
+/* Left Image Panel */
+.item-visual-left {
+    position: relative;
+    background: #fdfbf7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-visual-left img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item-row:hover .item-visual-left img {
+    transform: scale(1.02);
+}
+
+/* Right E-Commerce Control Panel */
+.item-checkout-right {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, #ffffff, #fcfbfa);
+    border-left: 1px solid #f3ece1;
+}
+
+.item-title {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.item-meta-tag {
+    display: inline-block;
+    align-self: flex-start;
+    background: #f7efe3;
+    color: #b45309;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.item-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.item-pricing-zone {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px dashed #e5caa4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.price-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-label {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.price-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #8c2d19;
+}
+
+.add-to-cart-action {
+    flex-grow: 1;
+    max-width: 220px;
+    background: #8c2d19;
+    color: #fff;
+    border: none;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(140, 45, 25, 0.2);
+}
+
+.add-to-cart-action:hover {
+    background: #611e0f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(140, 45, 25, 0.3);
+}
+
+/* Responsive Structural Adjustments */
+@media (max-width: 900px) {
+    .gallery-item-row {
+        grid-template-columns: 1fr;
+    }
+    .item-visual-left img {
+        height: 320px;
+    }
+    .item-checkout-right {
+        padding: 30px;
+    }
+}
